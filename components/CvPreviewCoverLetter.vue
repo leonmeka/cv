@@ -208,12 +208,13 @@ p {
   }
 
   &__name {
-    @apply text-3xl uppercase font-bold leading-8 mb-3 tracking-wide;
+    @apply text-xl uppercase font-bold leading-8 mb-3 tracking-wide;
     color: var(--primary);
+    margin-bottom: 0px;
   }
 
   &__job-title {
-    @apply text-xl uppercase;
+    @apply text-sm uppercase;
   }
 
   &__section {

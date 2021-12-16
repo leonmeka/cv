@@ -44,7 +44,7 @@ export default {
   'clear-settings': 'Einstellungen zurücksetzen',
   description:
     'Erstelle, visualisiere und speichere deinen Lebenslauf als PDF in wenigen Minuten!',
-  'title-tag': 'Lebenslauf',
+  'title-tag': 'CV Flow',
   projects: 'Projekte',
   'display-section': 'Sektion im Lebenslauf anzeigen',
   'cover-letter': 'Anschreiben',

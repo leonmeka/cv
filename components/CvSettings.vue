@@ -7,16 +7,6 @@
     <hr />
 
     <form class="form mb-10" autocomplete="on">
-      <div class="form__section px-6 py-3">
-        <button
-          class="form__btn form__btn--ghost"
-          type="button"
-          @click="resetForm"
-        >
-          {{ $t('clear-settings') }}
-        </button>
-      </div>
-
       <!-- LANGUAGE-->
       <fieldset class="form__section px-6 py-3">
         <legend class="form__legend">{{ $t('cv-language') }}</legend>
@@ -413,7 +403,7 @@
       <!-- CTA -->
       <div class="form__section flex flex-col p-6 gap-3">
         <label tabindex="0" class="form__btn flex justify-center">
-          {{ $t('upload-cv') }} (JSON)
+          {{ $t('upload-cv') }} ({{ $i18n.locale }})
           <input type="file" accept=".json" class="hidden" @change="uploadCV" />
         </label>
         <a
@@ -421,14 +411,22 @@
           rel="noopener"
           :download="`CV_${formSettings.name}_${formSettings.lastName}_${$i18n.locale}.json`"
           class="form__btn flex justify-center"
-          >{{ $t('download-cv-settings') }} (JSON)</a
+          >{{ $t('download-cv-settings') }} ({{ $i18n.locale }})</a
         >
+
+        <button
+          type="button"
+          class="form__btn form__btn--delete flex flex-col justify-center"
+          @click="resetForm"
+        >
+          <span>{{ $t('clear-settings') }}</span>
+        </button>
 
         <hr />
 
         <button
           type="button"
-          class="form__btn flex flex-col justify-center"
+          class="form__btn form__btn--confirm form__btn flex flex-col justify-center"
           @click="downloadPdf"
         >
           <span>{{ $t('download-cv-pdf') }}</span>
@@ -691,6 +689,12 @@ export default Vue.extend({
       @apply bg-red-400;
       &:hover {
         @apply bg-red-500;
+      }
+    }
+    &--confirm {
+      @apply bg-green-400;
+      &:hover {
+        @apply bg-green-500;
       }
     }
 

@@ -4,7 +4,7 @@
     <div
       id="cv"
       class="font-normal flex w-full bg-white"
-      style="overflow: scroll; overflow-y: hidden;"
+      style="overflow: scroll; overflow-y: hidden; padding: auto;"
     >
       <cv-preview-front></cv-preview-front>
       <cv-preview></cv-preview>

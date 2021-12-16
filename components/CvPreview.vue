@@ -420,6 +420,6 @@ p {
 }
 
 .blur {
-  filter: blur(5px);
+  filter: blur(10px);
 }
 </style>

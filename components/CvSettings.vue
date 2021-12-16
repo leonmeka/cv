@@ -402,7 +402,10 @@
 
       <!-- CTA -->
       <div class="form__section flex flex-col p-6 gap-3">
-        <label tabindex="0" class="form__btn flex justify-center">
+        <label
+          tabindex="0"
+          class="form__btn form__btn--ghost form__btn flex flex-col justify-center"
+        >
           {{ $t('upload-cv') }} ({{ $i18n.locale }})
           <input type="file" accept=".json" class="hidden" @change="uploadCV" />
         </label>
@@ -410,7 +413,7 @@
           :href="formSettingsHref"
           rel="noopener"
           :download="`CV_${formSettings.name}_${formSettings.lastName}_${$i18n.locale}.json`"
-          class="form__btn flex justify-center"
+          class="form__btn form__btn--ghost form__btn flex flex-col justify-center"
           >{{ $t('download-cv-settings') }} ({{ $i18n.locale }})</a
         >
 
@@ -692,9 +695,9 @@ export default Vue.extend({
       }
     }
     &--confirm {
-      @apply bg-green-400;
+      @apply bg-gray-800;
       &:hover {
-        @apply bg-green-500;
+        @apply bg-gray-700;
       }
     }
 

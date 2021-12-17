@@ -61,10 +61,7 @@
 
     <div class="cv__main w-2/3">
       <!-- PROJECTS -->
-      <section
-        v-if="formSettings.displayProjects"
-        class="cv__section cv__section--main w-full"
-      >
+      <section class="cv__section cv__section--main w-full">
         <h4 class="cv__section-title cv__section-title--main">
           {{ $t('projects') }}
         </h4>
@@ -98,7 +95,7 @@
       </section>
       <!-- // PROJECTS -->
 
-      <section v-if="formSettings.displayProjects" class="cv__section">
+      <section class="cv__section">
         <hr />
       </section>
 

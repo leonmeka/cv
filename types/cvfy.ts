@@ -2,6 +2,7 @@ export interface Cv {
   jobTitle: string;
   photo: string;
   displayPhoto: boolean;
+  displaySocial: boolean;
   name: string;
   lastName: string;
   email: string;

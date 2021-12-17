@@ -57,7 +57,7 @@
         <hr />
       </section>
       <!-- SOCIAL -->
-      <section class="cv__section">
+      <section v-if="formSettings.displaySocial" class="cv__section">
         <h4 class="cv__section-title">{{ $t('social') }}</h4>
         <div class="flex flex-col">
           <div v-if="formSettings.linkedin" class="cv__icon-wrapper">
@@ -105,7 +105,7 @@
       </section>
       <!-- // SOCIAL -->
 
-      <section class="cv__section">
+      <section v-if="formSettings.displaySocial" class="cv__section">
         <hr />
       </section>
     </div>

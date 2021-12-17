@@ -189,6 +189,12 @@
           <template v-slot:content>
             <div class="grid grid-cols-2 gap-x-3 gap-y-10">
               <div class="form__group col-span-full">
+                <cv-display-checkbox
+                  class="form__display-checkbox"
+                  :display-section="formSettings.displaySocial"
+                  section-name="social"
+                ></cv-display-checkbox>
+
                 <label class="form__label flex" for="linkedin">
                   <svg class="form__icon rounded mr-1">
                     <use href="@/assets/sprite.svg#linkedin"></use>
@@ -341,11 +347,6 @@
           </template>
           <template v-slot:content>
             <div>
-              <cv-display-checkbox
-                class="form__display-checkbox"
-                :display-section="formSettings.displayProjects"
-                section-name="projects"
-              ></cv-display-checkbox>
               <cv-dynamic-section
                 section-name="projects"
                 :entries="formSettings.projects"

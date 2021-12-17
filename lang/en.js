@@ -45,7 +45,7 @@ export default {
   work: 'work',
   'clear-settings': 'Clear Settings',
   description: 'Create, visualize and save your resume as a PDF in minutes!',
-  'title-tag': 'CV',
+  'title-tag': 'CV Flow',
   projects: 'projects',
   'display-section': 'Display section on CV',
   'cover-letter': 'Cover Letter',

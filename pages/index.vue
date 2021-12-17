@@ -47,7 +47,7 @@ export default Vue.extend({
         {
           hid: 'author',
           name: 'author',
-          content: 'claudiabdm',
+          content: 'leonmeka',
         },
         {
           hid: 'og:image',
@@ -58,7 +58,7 @@ export default Vue.extend({
         {
           hid: 'og:author',
           property: 'og:author',
-          content: 'Claudia Benito',
+          content: 'Leon Meka',
         },
         {
           hid: 'og:title',
@@ -69,11 +69,6 @@ export default Vue.extend({
           hid: 'og:description',
           property: 'og:description',
           content: this.$t('description') as string,
-        },
-        {
-          hid: 'twitter:creator',
-          name: 'twitter:creator',
-          content: '@claudiabdm',
         },
         {
           hid: 'twitter:title',
@@ -89,12 +84,6 @@ export default Vue.extend({
           hid: 'twitter:card',
           name: 'twitter:card',
           content: 'summary_large_image',
-        },
-        {
-          hid: 'twitter:image',
-          name: 'twitter:image',
-          content:
-            'https://repository-images.githubusercontent.com/315020727/e23c6200-8110-11eb-87b8-e9e5757bd827',
         },
         {
           hid: 'twitter:image:alt',

@@ -2,6 +2,7 @@ export default {
   'de-name': 'German',
   'en-name': 'English',
   'about-me': 'About me',
+  social: 'Social',
   experience: 'Professional Experience',
   education: 'Educational Background',
   contact: 'Contact',
@@ -13,7 +14,7 @@ export default {
   current: 'Current',
   'cv-language': 'Language',
   'cv-settings': 'Settings',
-  'color-theme': 'Color theme',
+  'color-theme': 'Color Theme',
   pink: 'pink',
   purple: 'purple',
   indigo: 'indigo',
@@ -49,5 +50,5 @@ export default {
   'cover-letter': 'Cover Letter',
   'cover-letter-introduction': 'Dear Ladies and Gentleman,',
   'cover-letter-greetings': 'Best regards,',
-  hobbies: 'Hobbies/Interests',
+  hobbies: 'Hobbies / Interests',
 };

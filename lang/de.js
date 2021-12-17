@@ -2,6 +2,7 @@ export default {
   'de-name': 'Deutsch',
   'en-name': 'Englisch',
   'about-me': 'Über Mich',
+  social: 'Zu finden auf',
   experience: 'Arbeitserfahrung',
   education: 'Akademischer Werdegang',
   contact: 'Kontakt',
@@ -50,5 +51,5 @@ export default {
   'cover-letter': 'Anschreiben',
   'cover-letter-introduction': 'Sehr geehrte Damen und Herren,',
   'cover-letter-greetings': 'Mit freundlichen Grüßen,',
-  hobbies: 'Hobbies/Interessen',
+  hobbies: 'Hobbies / Interessen',
 };

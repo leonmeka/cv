@@ -23,6 +23,10 @@
   #cv #credit {
     display: none;
   }
+
+  *::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 :root {

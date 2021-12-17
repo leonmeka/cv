@@ -1,24 +1,33 @@
 import { Cv } from '~/types/cvfy';
 
 export const cvSettingTemplate: Cv = {
-  jobTitle: 'Deputy Director Parks Department',
+  jobTitle: 'Nutritional Sciences',
   name: 'Max',
   photo: '',
-  displayPhoto: false,
+  displayPhoto: true,
   lastName: 'Muster',
   email: 'max@mustermann.de',
-  location: 'Nürnberg, Bayern',
+  location: 'Nuremberg, Bavaria',
   phoneNumber: '(0911) 8751627',
   aboutme:
-    "My name is Leslie Knope. I am a passionate, over-achieving government employee who believes the government's #1 job is serving the people. By pairing the right people with the right messaging at the right time, the parks department and your local government can make the world a better place for everyone! I have met Joe Biden, and one day I will become the first female President of the United States.",
-  jobSkills: ['Microsoft', 'Word', 'Excel', 'PerfectMind'],
-  softSkills: ['Positivity', 'Leadership', 'Public Speaking'],
-  hobbySkills: [],
-  languages: [{ lang: 'English', level: '100%' }],
-  linkedin: '',
-  twitter: '',
+    'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.',
+  jobSkills: ['Microsoft', 'Word', 'Excel', 'CV Flow', 'Powerpoint'],
+  softSkills: [
+    'Positivity',
+    'Leadership',
+    'Public Speaking',
+    'Nutritional Sciences',
+  ],
+  hobbySkills: ['Running', 'Fitness', 'Hip Hop'],
+  languages: [
+    { lang: 'English', level: '100%' },
+    { lang: 'German', level: '100%' },
+    { lang: 'French', level: '60%' },
+  ],
+  linkedin: 'max-mustermann',
+  twitter: 'max-mustermann',
   github: '',
-  website: 'www.MsKnope.com',
+  website: 'www.max-mustermann.de',
   education: [
     {
       title: 'A Environmental and Public Affairs',
@@ -26,7 +35,17 @@ export const cvSettingTemplate: Cv = {
       from: new Date(1993, 9, 1),
       to: new Date(1993, 4, 1),
       current: false,
-      summary: 'Summa cum Laude',
+      summary:
+        'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore. sam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit ame.',
+    },
+    {
+      title: 'Health Care Institute',
+      location: 'International Research University',
+      from: new Date(1994, 2, 1),
+      to: new Date(1993, 10, 5),
+      current: false,
+      summary:
+        'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore.',
     },
   ],
   work: [
@@ -45,7 +64,7 @@ export const cvSettingTemplate: Cv = {
     {
       title: 'City Councilor',
       location: 'City of Pawnee, Indiana',
-      from: new Date(2012, 1, 1),
+      from: new Date(2020, 1, 1),
       to: new Date(),
       current: true,
       summary: `- In placerat nisi pellentesque felis blandit, vel varius justo eleifend.
@@ -68,11 +87,36 @@ export const cvSettingTemplate: Cv = {
 - Sed et diam nec arcu tempor suscipit sit amet at tellus.
 - Duis quis diam imperdiet, pharetra lacus eget, fringilla odio.`,
     },
+    {
+      title: 'Nutritonal Survey',
+      location: 'City of Pawnee, Indiana',
+      from: new Date(2020, 2, 2),
+      to: new Date(2021, 5, 10),
+      current: false,
+      summary: `- In placerat nisi pellentesque felis blandit, vel varius justo eleifend.
+- Etiam porttitor tortor vel lobortis ultricies.
+- Nam non libero accumsan, sagittis nibh vitae, auctor ligula.
+- Sed hendrerit dui a ante porttitor, vitae tristique ipsum laoreet.
+- Suspendisse interdum mauris a lectus dignissim, vitae aliquet ante tempor.`,
+    },
+    {
+      title: 'Study Plan',
+      location: 'City of Pawnee, Indiana',
+      from: new Date(2020, 5, 1),
+      to: new Date(2021, 6, 2),
+      current: false,
+      summary: `- In placerat nisi pellentesque felis blandit, vel varius justo eleifend.
+- Etiam porttitor tortor vel lobortis ultricies.
+- Nam non libero accumsan, sagittis nibh vitae, auctor ligula.
+- Sed hendrerit dui a ante porttitor, vitae tristique ipsum laoreet.
+- Suspendisse interdum mauris a lectus dignissim, vitae aliquet ante tempor.`,
+    },
   ],
   displayEducation: true,
-  displayProjects: false,
+  displayProjects: true,
   activeColor: '#5B21B6',
-  coverLetter: '',
+  coverLetter:
+    'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. \n\nDuis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. \n\nUt wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. \n\nNam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. \n\nDuis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis.\n',
 };
 
 export const cvSettingsEmptyTemplate: Cv = {
@@ -126,5 +170,5 @@ export const cvSettingsEmptyTemplate: Cv = {
   displayEducation: true,
   displayProjects: false,
   coverLetter: '',
-  activeColor: '#000000',
+  activeColor: '#5B21B6',
 };

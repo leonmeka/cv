@@ -58,6 +58,7 @@
         <hr />
       </section>
     </div>
+
     <div class="cv__main w-2/3">
       <!-- PROJECTS -->
       <section
@@ -114,13 +115,17 @@
         </ul>
       </section>
       <!-- HOBBIES -->
+
+      <section class="cv__section">
+        <hr />
+      </section>
     </div>
   </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue';
-import { useContext, computed } from '@nuxtjs/composition-api';
+import { useContext, computed, reactive } from '@nuxtjs/composition-api';
 import { CvEvent } from '~/types/cvfy';
 import { useCvState } from '~/data/useCvState';
 
@@ -136,15 +141,26 @@ export default Vue.extend({
     const emailHref = computed(function getEmailHref() {
       return `mailto:${formSettings.value.email}`;
     });
-    const work = computed(function getWork() {
-      return orderEvents(formSettings.value.work);
-    });
-    const education = computed(function getEducation() {
-      return orderEvents(formSettings.value.education);
-    });
+
     const projects = computed(function getProjects() {
       return orderEvents(formSettings.value.projects);
     });
+
+    const state = reactive({
+      hasWatermark: false,
+    });
+
+    if (process.browser) {
+      window.addEventListener('beforeprint', (event) => {
+        state.hasWatermark = true;
+        console.log(state.hasWatermark);
+      });
+
+      window.addEventListener('afterprint', (event) => {
+        state.hasWatermark = false;
+        console.log(state.hasWatermark);
+      });
+    }
 
     function orderEvents(arr: CvEvent[]): CvEvent[] {
       return arr
@@ -177,12 +193,11 @@ export default Vue.extend({
     }
 
     return {
+      state,
       formSettings,
       isLoading,
       phoneNumberHref,
       emailHref,
-      work,
-      education,
       projects,
       formatDate,
     };
@@ -339,6 +354,10 @@ p {
 }
 
 .blur {
+  filter: blur(10px);
+}
+
+.watermark {
   filter: blur(10px);
 }
 </style>

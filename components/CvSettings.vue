@@ -7,6 +7,7 @@
     <hr />
 
     <form class="form mb-10" autocomplete="on">
+      <fieldset class="form__section px-6 py-3"></fieldset>
       <!-- LANGUAGE-->
       <fieldset class="form__section px-6 py-3">
         <legend class="form__legend">{{ $t('cv-language') }}</legend>

@@ -71,18 +71,15 @@
         <section class="cv__section cv__section--main w-full">
           <span>{{ $t('cover-letter-introduction') }}</span>
           <br />
-          <br />
         </section>
 
         <section class="cv__section cv__section--main w-full">
-          <p class="font-light" style="text-align: justify;">
+          <p class="font-light letter">
             {{ formSettings.coverLetter }}
           </p>
         </section>
       </section>
       <!-- COVER LETTER -->
-
-      <hr class="cv__bar" />
 
       <section class="cv__section cv__section--main w-full">
         <span>{{ $t('cover-letter-greetings') }}</span>
@@ -94,14 +91,15 @@
           {{ formSettings.name }} {{ formSettings.lastName }}</span
         >
       </section>
+
+      <hr class="cv__bar" />
     </div>
   </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue';
-import { useContext, computed } from '@nuxtjs/composition-api';
-import { CvEvent } from '~/types/cvfy';
+import { useContext, computed, reactive } from '@nuxtjs/composition-api';
 import { useCvState } from '~/data/useCvState';
 
 export default Vue.extend({
@@ -116,55 +114,29 @@ export default Vue.extend({
     const emailHref = computed(function getEmailHref() {
       return `mailto:${formSettings.value.email}`;
     });
-    const work = computed(function getWork() {
-      return orderEvents(formSettings.value.work);
-    });
-    const education = computed(function getEducation() {
-      return orderEvents(formSettings.value.education);
-    });
-    const projects = computed(function getProjects() {
-      return orderEvents(formSettings.value.projects);
+
+    const state = reactive({
+      hasWatermark: false,
     });
 
-    function orderEvents(arr: CvEvent[]): CvEvent[] {
-      return arr
-        .map((event) => {
-          event.summaryArr = getSummaryLines(event.summary);
-          return event;
-        })
-        .sort(
-          (a, b) => new Date(b.from).getTime() - new Date(a.from).getTime()
-        );
-    }
-
-    function getSummaryLines(summary: string): string[] {
-      const lines = summary.split('\n').map((line) => {
-        if (line[0] === '-') {
-          line = line.slice(1).trim();
-        }
-        return line;
+    if (process.browser) {
+      window.addEventListener('beforeprint', (event) => {
+        state.hasWatermark = true;
+        console.log(state.hasWatermark);
       });
-      return lines;
-    }
 
-    function formatDate(date: Date): string {
-      const options: Intl.DateTimeFormatOptions = {
-        year: 'numeric',
-        month: 'short',
-      };
-      const dateObj = new Date(date);
-      return dateObj.toLocaleDateString(context.app.i18n.locale, options);
+      window.addEventListener('afterprint', (event) => {
+        state.hasWatermark = false;
+        console.log(state.hasWatermark);
+      });
     }
 
     return {
+      state,
       formSettings,
       isLoading,
       phoneNumberHref,
       emailHref,
-      work,
-      education,
-      projects,
-      formatDate,
     };
   },
 });
@@ -318,7 +290,18 @@ p {
   }
 }
 
+.letter {
+  text-align: justify;
+  font-size: 10pt;
+  word-wrap: break-word;
+  white-space: pre-line;
+}
+
 .blur {
+  filter: blur(10px);
+}
+
+.watermark {
   filter: blur(10px);
 }
 </style>

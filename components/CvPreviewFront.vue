@@ -114,7 +114,7 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import { computed } from '@nuxtjs/composition-api';
+import { computed, reactive } from '@nuxtjs/composition-api';
 import { useCvState } from '~/data/useCvState';
 
 export default Vue.extend({
@@ -129,7 +129,24 @@ export default Vue.extend({
       return `mailto:${formSettings.value.email}`;
     });
 
+    const state = reactive({
+      hasWatermark: false,
+    });
+
+    if (process.browser) {
+      window.addEventListener('beforeprint', (event) => {
+        state.hasWatermark = true;
+        console.log(state.hasWatermark);
+      });
+
+      window.addEventListener('afterprint', (event) => {
+        state.hasWatermark = false;
+        console.log(state.hasWatermark);
+      });
+    }
+
     return {
+      state,
       formSettings,
       isLoading,
       phoneNumberHref,
@@ -287,6 +304,10 @@ p {
 }
 
 .blur {
+  filter: blur(10px);
+}
+
+.watermark {
   filter: blur(10px);
 }
 </style>

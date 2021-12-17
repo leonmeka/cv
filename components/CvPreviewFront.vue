@@ -11,15 +11,7 @@
         class="cv__section cv__section--main"
       >
         <div class="cv__icon-wrapper">
-          <img
-            style="
-              width: 145px;
-              height: 145px;
-              object-fit: cover;
-              margin-bottom: 30px;
-            "
-            :src="formSettings.photo"
-          />
+          <img id="photo" :src="formSettings.photo" />
         </div>
       </section>
 
@@ -317,5 +309,12 @@ p {
 
 .watermark {
   filter: blur(10px);
+}
+
+#photo {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  margin-bottom: 30px;
 }
 </style>

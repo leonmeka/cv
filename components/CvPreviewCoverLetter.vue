@@ -10,15 +10,7 @@
         v-if="formSettings.displayPhoto"
         class="cv__section cv__section--main"
       >
-        <img
-          style="
-            width: 125px;
-            height: 125px;
-            object-fit: cover;
-            margin-bottom: 30px;
-          "
-          :src="formSettings.photo"
-        />
+        <img id="photo" :src="formSettings.photo" />
       </section>
 
       <section class="cv__section cv__section--main">
@@ -309,5 +301,12 @@ p {
 
 .watermark {
   filter: blur(10px);
+}
+
+#photo {
+  width: 125px;
+  height: 125px;
+  object-fit: cover;
+  margin-bottom: 20px;
 }
 </style>

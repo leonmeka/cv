@@ -7,18 +7,10 @@
     <div class="cv__side w-1/3">
       <!-- PHOTO -->
       <section
-        v-if="formSettings.displayPhoto"
+        v-show="formSettings.displayPhoto"
         class="cv__section cv__section--main"
       >
-        <img
-          style="
-            width: 125px;
-            height: 125px;
-            object-fit: cover;
-            margin-bottom: 30px;
-          "
-          :src="formSettings.photo"
-        />
+        <img id="photo" :src="formSettings.photo" />
       </section>
 
       <section class="cv__section cv__section--main">
@@ -107,7 +99,9 @@
 
       <!-- ADDITIONAL SKILLS -->
       <section class="cv__section">
-        <h4 class="cv__section-title">{{ $t('additional-skills') }}</h4>
+        <h4 class="cv__section-title cv__section-title--main">
+          {{ $t('additional-skills') }}
+        </h4>
         <ul class="cv__list">
           <li
             v-for="skill in formSettings.additionalSkills"
@@ -125,7 +119,9 @@
 
       <!-- HOBBIES -->
       <section class="cv__section">
-        <h4 class="cv__section-title">{{ $t('hobbies') }}</h4>
+        <h4 class="cv__section-title cv__section-title--main">
+          {{ $t('hobbies') }}
+        </h4>
         <ul class="cv__list">
           <li
             v-for="skill in formSettings.hobbySkills"
@@ -380,5 +376,12 @@ p {
 
 .watermark {
   filter: blur(10px);
+}
+
+#photo {
+  width: 125px;
+  height: 125px;
+  object-fit: cover;
+  margin-bottom: 20px;
 }
 </style>

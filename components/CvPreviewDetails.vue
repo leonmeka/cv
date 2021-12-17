@@ -132,10 +132,6 @@
         </ul>
       </section>
       <!-- HOBBIES -->
-
-      <section class="cv__section">
-        <hr />
-      </section>
     </div>
   </div>
 </template>

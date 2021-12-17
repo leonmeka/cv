@@ -50,12 +50,6 @@ export default Vue.extend({
           content: 'leonmeka',
         },
         {
-          hid: 'og:image',
-          property: 'og:image',
-          content:
-            'https://repository-images.githubusercontent.com/315020727/e23c6200-8110-11eb-87b8-e9e5757bd827',
-        },
-        {
           hid: 'og:author',
           property: 'og:author',
           content: 'Leon Meka',
@@ -68,26 +62,6 @@ export default Vue.extend({
         {
           hid: 'og:description',
           property: 'og:description',
-          content: this.$t('description') as string,
-        },
-        {
-          hid: 'twitter:title',
-          name: 'twitter:title',
-          content: this.$t('title-tag') as string,
-        },
-        {
-          hid: 'twitter:description',
-          name: 'twitter:description',
-          content: this.$t('description') as string,
-        },
-        {
-          hid: 'twitter:card',
-          name: 'twitter:card',
-          content: 'summary_large_image',
-        },
-        {
-          hid: 'twitter:image:alt',
-          name: 'twitter:image:alt',
           content: this.$t('description') as string,
         },
       ],

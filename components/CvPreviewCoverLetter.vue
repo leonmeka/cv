@@ -2,7 +2,11 @@
   <div
     tabindex="0"
     aria-label="CV preview"
-    :class="['cv', 'bg-white', { blur: isLoading }]"
+    :class="[
+      'cv',
+      'bg-white',
+      { blur: isLoading, watermark: state.hasWatermark },
+    ]"
   >
     <div class="cv__side w-1/3">
       <!-- PHOTO -->
@@ -89,8 +93,6 @@
           {{ formSettings.name }} {{ formSettings.lastName }}</span
         >
       </section>
-
-      <hr class="cv__bar" />
     </div>
   </div>
 </template>

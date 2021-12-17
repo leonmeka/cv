@@ -53,4 +53,6 @@ export default {
   'cover-letter-introduction': 'Sehr geehrte Damen und Herren,',
   'cover-letter-greetings': 'Mit freundlichen Grüßen,',
   hobbies: 'Hobbies / Interessen',
+  'serial-key': 'Aktivierungsschlüssel',
+  'secret-password': 'Geheimes Passwort eingeben...',
 };

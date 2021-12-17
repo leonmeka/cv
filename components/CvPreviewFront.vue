@@ -2,7 +2,11 @@
   <div
     tabindex="0"
     aria-label="CV preview"
-    :class="['cv', 'bg-white', { blur: isLoading }]"
+    :class="[
+      'cv',
+      'bg-white',
+      { blur: isLoading, watermark: state.hasWatermark },
+    ]"
   >
     <div class="cv__side w-1/2">
       <!-- PHOTO -->

@@ -89,9 +89,4 @@ export default {
   router: {
     linkActiveClass: 'form__btn--active',
   },
-  pwa: {
-    meta: {
-      theme_color: '#5B21B6',
-    },
-  },
 };

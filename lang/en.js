@@ -52,4 +52,6 @@ export default {
   'cover-letter-introduction': 'Dear Ladies and Gentleman,',
   'cover-letter-greetings': 'Best regards,',
   hobbies: 'Hobbies / Interests',
+  'serial-key': 'Serial Key',
+  'secret-password': 'Enter secret passphrase...',
 };

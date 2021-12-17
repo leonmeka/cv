@@ -1,8 +1,5 @@
 import { useContext, reactive, toRefs } from '@nuxtjs/composition-api';
-import {
-  cvSettingsEmptyTemplate,
-  cvSettingTemplate,
-} from './example-cv-settings';
+import { cvSettingTemplate } from './example-cv-settings';
 import { Cv, CvEvent, defaultSkill, languagesSkill } from '~/types/cvfy';
 
 const state = reactive({

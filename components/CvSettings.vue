@@ -182,7 +182,7 @@
 
       <!-- SOCIAL -->
       <fieldset class="form__section grid gap-3">
-        <expansion-panel :panel-name="'Social'">
+        <expansion-panel :panel-name="$t('social')">
           <template v-slot:title>
             <legend class="form__legend">Social</legend>
           </template>
@@ -450,19 +450,26 @@
 
         <hr />
 
+        <label class="form__label">🔐 {{ $t('serial-key') }}</label>
+        <input
+          class="form__control"
+          type="text"
+          v-model="password"
+          :placeholder="$t('secret-password')"
+        />
         <button
           type="button"
           class="form__btn form__btn--confirm form__btn flex flex-col justify-center"
-          @click="downloadPdf"
+          @click="authenticate(password)"
         >
           <span>{{ $t('download-cv-pdf') }}</span>
-          <span>({{ $t('chrome-recommended') }})</span>
         </button>
       </div>
       <!-- CTA -->
     </form>
   </div>
 </template>
+
 <script lang="ts">
 import Vue from 'vue';
 import {
@@ -477,6 +484,7 @@ import CvInputTags from '~/components/CvInputTags.vue';
 import ExpansionPanel from '~/components/ExpansionPanel.vue';
 import { useCvState } from '~/data/useCvState';
 import imageCompression from 'browser-image-compression';
+var md5 = require('md5');
 
 export default Vue.extend({
   name: 'CvSettings',
@@ -503,6 +511,7 @@ export default Vue.extend({
 
     const { formSettings, uploadCV, resetForm, setUpCvSettings } = useCvState();
     const context = useContext();
+    let password = '';
 
     onMounted(setUpCvSettings);
 
@@ -533,12 +542,16 @@ export default Vue.extend({
       );
     });
 
-    function downloadPdf(): void {
-      const oldTitle = document.title;
-      document.title = `CV_${formSettings.value.name}_${formSettings.value.lastName}_${context.app.i18n.locale}`;
-      console.log(window);
-      window.print();
-      document.title = oldTitle;
+    function authenticate(password): void {
+      if (md5(password) === '098f6bcd4621d373cade4e832627b4f6') {
+        const oldTitle = document.title;
+        document.title = `CV_${formSettings.value.name}_${formSettings.value.lastName}_${context.app.i18n.locale}`;
+        console.log(window);
+        window.print();
+        document.title = oldTitle;
+      } else {
+        alert('Serial Key incorrect / Aktivierungsschlüssel ungültig!');
+      }
     }
 
     function changeColor(color: string, darker: string): void {
@@ -589,14 +602,15 @@ export default Vue.extend({
 
     return {
       ...config,
-      downloadPdf,
       changeColor,
       onPhotoChange,
       formSettings,
       formSettingsHref,
       availableLocales,
+      authenticate,
       uploadCV,
       resetForm,
+      password,
     };
   },
 });

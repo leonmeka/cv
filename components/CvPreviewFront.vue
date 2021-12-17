@@ -6,16 +6,24 @@
   >
     <div class="cv__side w-1/2">
       <!-- PHOTO -->
-      <div v-if="formSettings.displayPhoto" class="flex flex-col">
+      <section
+        v-if="formSettings.displayPhoto"
+        class="cv__section cv__section--main"
+      >
         <div class="cv__icon-wrapper">
           <img
-            style="width: 145px; height: 145px; object-fit: cover;"
+            style="
+              width: 145px;
+              height: 145px;
+              object-fit: cover;
+              margin-bottom: 30px;
+            "
             :src="formSettings.photo"
           />
         </div>
-      </div>
+      </section>
 
-      <section class="cv__section">
+      <section class="cv__section cv__section--main">
         <h2 class="cv__name">
           {{ formSettings.name }} <b>{{ formSettings.lastName }}</b>
         </h2>

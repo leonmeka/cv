@@ -358,6 +358,27 @@
 
       <hr />
 
+      <!-- ADDITIONAL SKILLS -->
+      <fieldset class="form__section grid gap-3">
+        <expansion-panel :panel-name="$t('additional-skills')">
+          <template v-slot:title>
+            <legend class="form__legend">{{ $t('additional-skills') }}</legend>
+          </template>
+          <template v-slot:content>
+            <cv-input-tags
+              tag-list-name="additionalSkills"
+              :tag-list-label="`🏄‍♂️ Hobbies`"
+              :tag-list="formSettings.additionalSkills"
+              @addTag="addSkill($event)"
+              @removeTag="removeSkill($event)"
+            ></cv-input-tags>
+          </template>
+        </expansion-panel>
+      </fieldset>
+      <!-- ADDITIONAL SKILLS -->
+
+      <hr />
+
       <!-- HOBBIES -->
       <fieldset class="form__section grid gap-3">
         <expansion-panel :panel-name="$t('hobbies')">

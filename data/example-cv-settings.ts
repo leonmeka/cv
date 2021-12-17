@@ -11,13 +11,14 @@ export const cvSettingTemplate: Cv = {
   phoneNumber: '(0911) 8751627',
   aboutme:
     'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.',
-  jobSkills: ['Microsoft', 'Word', 'Excel', 'CV Flow', 'Powerpoint'],
+  jobSkills: ['Nutrition', 'Health Management', 'Public Management'],
   softSkills: [
     'Positivity',
     'Leadership',
     'Public Speaking',
     'Nutritional Sciences',
   ],
+  additionalSkills: ['Word', 'Excel', 'Powerpoint', 'Google Tool Suite'],
   hobbySkills: ['Running', 'Fitness', 'Hip Hop'],
   languages: [
     { lang: 'English', level: '100%' },
@@ -171,4 +172,5 @@ export const cvSettingsEmptyTemplate: Cv = {
   displayProjects: false,
   coverLetter: '',
   activeColor: '#5B21B6',
+  additionalSkills: [],
 };

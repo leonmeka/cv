@@ -98,6 +98,24 @@
       </section>
       <!-- // PROJECTS -->
 
+      <section v-if="formSettings.displayProjects" class="cv__section">
+        <hr />
+      </section>
+
+      <!-- ADDITIONAL SKILLS -->
+      <section class="cv__section">
+        <h4 class="cv__section-title">{{ $t('additional-skills') }}</h4>
+        <ul class="cv__list">
+          <li
+            v-for="skill in formSettings.additionalSkills"
+            :key="`preview${skill}`"
+          >
+            {{ skill }}
+          </li>
+        </ul>
+      </section>
+      <!-- ADDITIONAL SKILLS -->
+
       <section class="cv__section">
         <hr />
       </section>

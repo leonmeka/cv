@@ -11,6 +11,7 @@ export interface Cv {
   jobSkills: string[];
   softSkills: string[];
   hobbySkills: string[];
+  additionalSkills: string[];
   languages: { lang: string; level: string }[];
   linkedin: string;
   twitter: string;
@@ -39,5 +40,5 @@ export interface languagesSkill {
 }
 export interface defaultSkill {
   skill: string;
-  skillType: 'jobSkills' | 'softSkills' | 'hobbySkills';
+  skillType: 'jobSkills' | 'softSkills' | 'additionalSkills' | 'hobbySkills';
 }

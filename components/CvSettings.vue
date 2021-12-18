@@ -368,7 +368,7 @@
           <template v-slot:content>
             <cv-input-tags
               tag-list-name="additionalSkills"
-              :tag-list-label="`🏄‍♂️ Hobbies`"
+              :tag-list-label="$t('additional-skills')"
               :tag-list="formSettings.additionalSkills"
               @addTag="addSkill($event)"
               @removeTag="removeSkill($event)"

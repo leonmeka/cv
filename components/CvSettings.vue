@@ -561,7 +561,7 @@ export default Vue.extend({
         window.print();
         document.title = oldTitle;
       } else {
-        alert('Serial Key incorrect / Aktivierungsschlüssel ungültig!');
+        alert('Activation Key incorrect / Aktivierungsschlüssel ungültig!');
       }
     }
 

@@ -8,7 +8,7 @@ export default {
   contact: 'Kontakt',
   'professional-skills': 'Branchenwissen',
   'soft-skills': 'Soft Skills',
-  'additional-skills': 'Fähigkeiten',
+  'additional-skills': 'Zusätzliche Fähigkeiten',
   languages: 'Sprachen',
   'cv-photo': 'Foto',
   'upload-photo': 'Foto hochladen',

@@ -55,4 +55,6 @@ export default {
   hobbies: 'Hobbies / Interessen',
   'serial-key': 'Aktivierungsschlüssel',
   'secret-password': 'Geheimes Passwort eingeben...',
+  'missing-key': 'Du besitzt noch keinen Aktivierungsschlüssel?',
+  'purchase-key': 'Jetzt kaufen',
 };

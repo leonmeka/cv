@@ -171,7 +171,7 @@ p {
   min-height: 29.69cm;
   max-width: 21cm;
   max-height: 29.69cm;
-  margin: 0;
+  padding: -50%;
   align-self: center;
   word-break: break-word;
   transform: scale(0.3);

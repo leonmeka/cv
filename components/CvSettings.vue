@@ -465,7 +465,18 @@
           <span>{{ $t('download-cv-pdf') }}</span>
         </button>
       </div>
-      <!-- CTA -->
+
+      <hr />
+      <div class="form__section flex flex-col p-6 gap-3">
+        <script src="https://gumroad.com/js/gumroad.js"></script>
+        <span>{{ $t('missing-key') }}</span>
+        <a
+          class="gumroad-button"
+          href="https://cvflow.gumroad.com/l/cvflow-serial-key"
+          ><span>{{ $t('purchase-key') }}</span></a
+        >
+        <!-- CTA -->
+      </div>
     </form>
   </div>
 </template>
@@ -543,7 +554,7 @@ export default Vue.extend({
     });
 
     function authenticate(password): void {
-      if (md5(password) === '098f6bcd4621d373cade4e832627b4f6') {
+      if (md5(password) === '691c080bc820f27fe1ea82a33228a9e8') {
         const oldTitle = document.title;
         document.title = `CV_${formSettings.value.name}_${formSettings.value.lastName}_${context.app.i18n.locale}`;
         console.log(window);

@@ -3,7 +3,7 @@
     <cv-settings id="settings" class="settings"></cv-settings>
     <div
       id="cv"
-      class="font-normal flex w-full bg-white"
+      class="font-normal flex w-full bg-white scrollContainer"
       style="overflow: scroll; overflow-y: hidden; padding: auto;"
     >
       <cv-preview-front></cv-preview-front>
@@ -40,6 +40,11 @@ export default Vue.extend({
       title: this.$t('title-tag') as string,
       meta: [
         {
+          hid: 'viewport',
+          name: 'viewport',
+          content: 'width=device-width,initial-scale=1,user-scalable=no',
+        },
+        {
           hid: 'description',
           name: 'description',
           content: this.$t('description') as string,
@@ -70,6 +75,7 @@ export default Vue.extend({
   setup() {},
 });
 </script>
+
 <style lang="postcss" scoped>
 @font-face {
   font-family: 'signature';
@@ -78,7 +84,7 @@ export default Vue.extend({
 
 @media screen and (min-width: 1024px) {
   .main {
-    @apply flex h-full;
+    @apply flex h-full w-full;
   }
   .settings {
     width: 600px !important;

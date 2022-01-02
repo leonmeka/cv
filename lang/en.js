@@ -52,6 +52,8 @@ export default {
   'cover-letter-introduction': 'Dear Ladies and Gentleman,',
   'cover-letter-greetings': 'Best regards,',
   hobbies: 'Hobbies / Interests',
-  'serial-key': 'Serial Key',
+  'serial-key': 'Activiation Key',
   'secret-password': 'Enter secret passphrase...',
+  'missing-key': "You don't have an activation key yet?",
+  'purchase-key': 'Purchase Now',
 };

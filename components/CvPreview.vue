@@ -300,7 +300,6 @@ p {
   margin: 0;
   align-self: center;
   word-break: break-word;
-  transform: scale(0.3);
   overflow-y: hidden;
 
   @media screen and (min-height: 550px) {

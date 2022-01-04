@@ -471,8 +471,7 @@
         </button>
 
         <p class="text-sm p-2 text-gray-600">
-          <b>Notice:</b> For ensuring optimal results, we recommend using Google
-          Chrome.
+          <b>{{ $t('notice') }}</b> {{ $t('chrome-notice') }}
         </p>
       </div>
 

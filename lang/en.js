@@ -56,4 +56,7 @@ export default {
   'secret-password': 'Enter secret passphrase...',
   'missing-key': "You don't have an activation key yet?",
   'purchase-key': 'Purchase Now',
+  notice: 'Notice:',
+  'chrome-notice':
+    'For ensuring optimal results, we recommend using Google Chrome.',
 };

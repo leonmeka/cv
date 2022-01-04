@@ -57,4 +57,7 @@ export default {
   'secret-password': 'Geheimes Passwort eingeben...',
   'missing-key': 'Du besitzt noch keinen Aktivierungsschlüssel?',
   'purchase-key': 'Jetzt kaufen',
+  notice: 'Hinweis:',
+  'chrome-notice':
+    'Um optimale Ergebnisse zu erzielen, empfehlen wir die Verwendung von Google Chrome.',
 };

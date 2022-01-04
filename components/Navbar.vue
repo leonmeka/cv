@@ -26,7 +26,7 @@
         >
           <a
             class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium"
-            >Public Beta</a
+            >Public Beta (v1.0)</a
           >
         </div>
       </div>

@@ -4,12 +4,10 @@
     <div class="main">
       <cv-settings id="settings"></cv-settings>
       <div id="cv" class="canvas">
-        <div class="book">
-          <cv-preview-front id="front"></cv-preview-front>
-          <cv-preview id="overview"></cv-preview>
-          <cv-preview-details id="detail"></cv-preview-details>
-          <cv-preview-cover-letter id="coverletter"></cv-preview-cover-letter>
-        </div>
+        <cv-preview-front id="front"></cv-preview-front>
+        <cv-preview id="overview"></cv-preview>
+        <cv-preview-details id="detail"></cv-preview-details>
+        <cv-preview-cover-letter id="coverletter"></cv-preview-cover-letter>
       </div>
     </div>
   </div>
@@ -124,10 +122,6 @@ export default Vue.extend({
   padding: 20px;
 }
 
-.canvas {
-  display: none;
-}
-
 .main {
   background-color: rgba(238, 242, 245, 1) !important;
 }
@@ -143,6 +137,10 @@ export default Vue.extend({
   border-radius: 10px 10px 0 0;
   -webkit-box-shadow: 0px 0px 20px 2px rgba(0, 0, 0, 0.15);
   box-shadow: 0px 0px 20px 2px rgba(0, 0, 0, 0.15);
+}
+
+.canvas {
+  display: none;
 }
 
 @media screen and (min-width: 1024px) {

@@ -469,6 +469,11 @@
         >
           <span>{{ $t('download-cv-pdf') }}</span>
         </button>
+
+        <p class="text-sm p-2 text-gray-600">
+          <b>Notice:</b> For ensuring optimal results, we recommend using Google
+          Chrome.
+        </p>
       </div>
 
       <hr />

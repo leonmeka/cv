@@ -226,35 +226,6 @@ p {
   @apply leading-relaxed;
 }
 .cv {
-  @apply flex text-gray-800 shadow-lg text-sm font-normal;
-  width: 21cm;
-  height: 29.69cm;
-  min-width: 21cm;
-  min-height: 29.69cm;
-  max-width: 21cm;
-  max-height: 29.69cm;
-  margin: 0;
-  align-self: center;
-  word-break: break-word;
-  transform: scale(0.3);
-  overflow-y: hidden;
-
-  @media screen and (min-height: 550px) {
-    transform: scale(0.4);
-  }
-  @media screen and (min-height: 650px) {
-    transform: scale(0.5);
-  }
-  @media screen and (min-height: 750px) {
-    transform: scale(0.6);
-  }
-  @media screen and (min-height: 870px) {
-    transform: scale(0.7);
-  }
-  @media screen and (min-height: 1024px) {
-    transform: scale(1);
-  }
-
   &__side {
     @apply px-6 py-10 bg-gray-100 bg-opacity-100;
   }

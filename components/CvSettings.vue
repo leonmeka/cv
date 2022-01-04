@@ -1,11 +1,8 @@
 <template>
   <div class="bg-gray-100 bg-opacity-100 shadow-lg font-bold z-10">
-    <h2 class="text-2xl pt-8 px-6 pb-6 tracking-wide uppercase">
-      {{ $t('cv-settings') }}
-    </h2>
+    <h1 class="text-2xl pt-8 px-6 pb-6 tracking-wide">Live Editor</h1>
 
     <hr />
-
     <form class="form mb-10" autocomplete="on">
       <fieldset class="form__section px-6 py-3"></fieldset>
       <!-- LANGUAGE-->
@@ -368,7 +365,7 @@
           <template v-slot:content>
             <cv-input-tags
               tag-list-name="additionalSkills"
-              :tag-list-label="$t('additional-skills')"
+              :tag-list-label="`👨‍💻 ${$t('additional-skills')}`"
               :tag-list="formSettings.additionalSkills"
               @addTag="addSkill($event)"
               @removeTag="removeSkill($event)"
@@ -389,7 +386,7 @@
           <template v-slot:content>
             <cv-input-tags
               tag-list-name="hobbySkills"
-              :tag-list-label="`🏄‍♂️ Hobbies`"
+              :tag-list-label="`🏄‍♂️  ${$t('hobbies')}`"
               :tag-list="formSettings.hobbySkills"
               @addTag="addSkill($event)"
               @removeTag="removeSkill($event)"
@@ -408,14 +405,20 @@
             <legend class="form__legend">{{ $t('cover-letter') }}</legend>
           </template>
           <template v-slot:content>
-            <textarea
-              id="coverletter"
-              v-model="formSettings.coverLetter"
-              class="form__control"
-              name="coverletter"
-              cols="30"
-              rows="10"
-            ></textarea>
+            <div class="form__group col-span-full">
+              <label class="form__label" for="aboutme"
+                >🖋 {{ $t('cover-letter') }}</label
+              >
+
+              <textarea
+                id="coverletter"
+                v-model="formSettings.coverLetter"
+                class="form__control"
+                name="coverletter"
+                cols="30"
+                rows="10"
+              ></textarea>
+            </div>
           </template>
         </expansion-panel>
       </fieldset>
@@ -447,9 +450,11 @@
         >
           <span>{{ $t('clear-settings') }}</span>
         </button>
+      </div>
 
-        <hr />
+      <hr />
 
+      <div class="form__section flex flex-col p-6 gap-3">
         <label class="form__label">🔐 {{ $t('serial-key') }}</label>
         <input
           class="form__control"
@@ -467,15 +472,15 @@
       </div>
 
       <hr />
+
       <div class="form__section flex flex-col p-6 gap-3">
-        <script src="https://gumroad.com/js/gumroad.js"></script>
         <span>{{ $t('missing-key') }}</span>
         <a
-          class="gumroad-button"
+          class="form__btn form__btn--confirm form__btn flex flex-col justify-center"
           href="https://cvflow.gumroad.com/l/cvflow-serial-key"
+          target="_blank"
           ><span>{{ $t('purchase-key') }}</span></a
         >
-        <!-- CTA -->
       </div>
     </form>
   </div>
@@ -557,8 +562,11 @@ export default Vue.extend({
       if (md5(password) === '691c080bc820f27fe1ea82a33228a9e8') {
         const oldTitle = document.title;
         document.title = `CV_${formSettings.value.name}_${formSettings.value.lastName}_${context.app.i18n.locale}`;
-        console.log(window);
-        window.print();
+        try {
+          document.execCommand('print', false);
+        } catch (e) {
+          window.print();
+        }
         document.title = oldTitle;
       } else {
         alert('Activation Key incorrect / Aktivierungsschlüssel ungültig!');

@@ -2,7 +2,7 @@
   <div class="expansion-panel">
     <div class="expansion-panel__header" @click.prevent="togglePanel">
       <div class="expansion-panel__title">
-        <slot name="title">Título</slot>
+        <slot name="title">Title</slot>
         <button
           :id="`expansionPanel${panelName}`"
           type="button"

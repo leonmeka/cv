@@ -1662,6 +1662,13 @@
   dependencies:
     "@types/node" "*"
 
+"@types/jquery@^3.5.11":
+  "integrity" "sha512-lYZGdfOtUa0XFjIATQgiogqeTY5PNNMOmp3Jq48ghmJALL8t/IqABRqlEwdHfuUdA8iIE1uGD1HoI4a7Tiy6OA=="
+  "resolved" "https://registry.npmjs.org/@types/jquery/-/jquery-3.5.11.tgz"
+  "version" "3.5.11"
+  dependencies:
+    "@types/sizzle" "*"
+
 "@types/json-schema@^7.0.3", "@types/json-schema@^7.0.4", "@types/json-schema@^7.0.5", "@types/json-schema@^7.0.8":
   "integrity" "sha512-qcUXuemtEu+E5wZSJHNxUXeCZhAfXKQ41D+duX+VYPde7xyEVZci+/oXKJL13tnRs9lR2pr4fod59GT6/X1/yQ=="
   "resolved" "https://registry.npmjs.org/@types/json-schema/-/json-schema-7.0.9.tgz"
@@ -1759,6 +1766,11 @@
   dependencies:
     "@types/mime" "^1"
     "@types/node" "*"
+
+"@types/sizzle@*":
+  "integrity" "sha512-JYM8x9EGF163bEyhdJBpR2QX1R5naCJHC8ucJylJ3w9/CVBaskdQ8WqBf8MmQrd1kRvp/a4TS8HJ+bxzR7ZJYQ=="
+  "resolved" "https://registry.npmjs.org/@types/sizzle/-/sizzle-2.3.3.tgz"
+  "version" "2.3.3"
 
 "@types/source-list-map@*":
   "integrity" "sha512-K5K+yml8LTo9bWJI/rECfIPrGgxdpeNbj+d53lwN4QjW1MCwlkhUms+gtdzigTeUyBr09+u8BwOIY3MXvHdcsA=="
@@ -6981,16 +6993,6 @@
   "resolved" "https://registry.npmjs.org/num2fraction/-/num2fraction-1.2.2.tgz"
   "version" "1.2.2"
 
-"nuxt-tailvue@^1.0.95":
-  "integrity" "sha512-8DVluxBJak/X2QZ8WpiJSbEwkKbhVF2x8OURKWhfYuXsj5cDlXE4LhnZfr/Otj6KdcTCEVGnQt96lqE+WQG02A=="
-  "resolved" "https://registry.npmjs.org/nuxt-tailvue/-/nuxt-tailvue-1.0.95.tgz"
-  "version" "1.0.95"
-  dependencies:
-    "tv-button" "latest"
-    "tv-icon" "latest"
-    "tv-modal" "latest"
-    "tv-toast" "latest"
-
 "nuxt@^2.15", "nuxt@^2.15.7":
   "integrity" "sha512-ceK3qLg/Baj7J8mK9bIxqw9AavrF+LXqwYEreBdY/a4Sj8YV4mIvhqea/6E7VTCNNGvKT2sJ/TTJjtfQ597lTA=="
   "resolved" "https://registry.npmjs.org/nuxt/-/nuxt-2.15.8.tgz"
@@ -9906,36 +9908,6 @@
   "integrity" "sha1-oVe6QC2iTpv5V/mqadUk7tQpAaY="
   "resolved" "https://registry.npmjs.org/tty-browserify/-/tty-browserify-0.0.0.tgz"
   "version" "0.0.0"
-
-"tv-button@^1.0.7":
-  "integrity" "sha512-hiOPIBuMt7ID6BcqG1umWWpLlnOJVnyZPzNHiWXrtGhoIECGf+z96ub7o07zer+C7iZg+Ei0TWt8xB0zQVbL4A=="
-  "resolved" "https://registry.npmjs.org/tv-button/-/tv-button-1.2.2.tgz"
-  "version" "1.2.2"
-
-"tv-button@latest":
-  "integrity" "sha512-qd5zCM2yKbY/5AkHOSX7OWqa/bQcKZMXU8cPTAf0xdKYPuiMH618luSw5Ope4vZMj7j3fCcLwumfCp+lUkWq/g=="
-  "resolved" "https://registry.npmjs.org/tv-button/-/tv-button-2.0.7.tgz"
-  "version" "2.0.7"
-
-"tv-icon@^1.0.1", "tv-icon@latest":
-  "integrity" "sha512-2tAaWWmGrjjwEPJjMBVAZBXvWuA2jpoYmCu5ipbaLVE0v9ve3gnT0EBjb8LtJn7f4BjySkcFlOqWPg0hzVN46Q=="
-  "resolved" "https://registry.npmjs.org/tv-icon/-/tv-icon-1.0.24.tgz"
-  "version" "1.0.24"
-
-"tv-modal@latest":
-  "integrity" "sha512-4DA2f9XpB9GP3+XsH1e1rBQcvMI6CJkC5rTeCVgfhZz2NMUtTlz0mO71VJlB8KYzWSi4QoYOBtqBk2TLZ+fewQ=="
-  "resolved" "https://registry.npmjs.org/tv-modal/-/tv-modal-1.0.24.tgz"
-  "version" "1.0.24"
-  dependencies:
-    "tv-button" "^1.0.7"
-    "tv-icon" "^1.0.1"
-
-"tv-toast@latest":
-  "integrity" "sha512-giirzodNpV2NN9AVku3eSS2/kDO17iepDDTJoTLrasBnQx//6mUi9/fS6dksfRn7Mjn1P2AvDLsgFqhSBtbFEg=="
-  "resolved" "https://registry.npmjs.org/tv-toast/-/tv-toast-1.2.30.tgz"
-  "version" "1.2.30"
-  dependencies:
-    "tv-icon" "^1.0.1"
 
 "type-check@^0.4.0", "type-check@~0.4.0":
   "integrity" "sha512-XleUoc9uwGXqjWwXaUTZAmzMcFZ5858QA2vvx1Ur5xIcixXIP+8LnFDgRplU30us6teqdlskFfu+ae4K79Ooew=="

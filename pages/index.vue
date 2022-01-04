@@ -1,15 +1,16 @@
 <template>
-  <div class="main">
-    <cv-settings id="settings" class="settings"></cv-settings>
-    <div
-      id="cv"
-      class="font-normal flex w-full bg-white scrollContainer"
-      style="overflow: scroll; overflow-y: hidden; padding: auto;"
-    >
-      <cv-preview-front></cv-preview-front>
-      <cv-preview></cv-preview>
-      <cv-preview-details></cv-preview-details>
-      <cv-preview-cover-letter></cv-preview-cover-letter>
+  <div style="display: contents;">
+    <navbar></navbar>
+    <div class="main">
+      <cv-settings id="settings" style="overflow: scroll;"></cv-settings>
+      <div id="cv" class="canvas">
+        <div class="book">
+          <cv-preview-front id="front"></cv-preview-front>
+          <cv-preview id="overview"></cv-preview>
+          <cv-preview-details id="detail"></cv-preview-details>
+          <cv-preview-cover-letter id="coverletter"></cv-preview-cover-letter>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -21,6 +22,7 @@ import CvPreviewFront from '@/components/CvPreviewFront.vue';
 import CvPreview from '@/components/CvPreview.vue';
 import CvPreviewDetails from '@/components/CvPreviewDetails.vue';
 import CvPreviewCoverLetter from '@/components/CvPreviewCoverLetter.vue';
+import Navbar from '@/components/Navbar.vue';
 
 export default Vue.extend({
   name: 'Index',
@@ -30,6 +32,7 @@ export default Vue.extend({
     CvPreviewDetails,
     CvPreviewFront,
     CvPreviewCoverLetter,
+    Navbar,
   },
 
   head() {
@@ -72,7 +75,42 @@ export default Vue.extend({
       ],
     };
   },
-  setup() {},
+  mounted() {
+    function adjustZoom() {
+      const canvas = document.getElementById('cv')!;
+
+      var documentWidth = canvas.offsetWidth;
+      var documentHeight = canvas.offsetHeight;
+
+      // 1cm = 37.795276px;
+      // 21cm width + 1cm of margins each sides
+      // 29.7cm height + 1cm of margins each sides
+      var zoomWidth = documentWidth / 23;
+      var zoomHeight = documentHeight / (31.7 * (1.25 * 37.795276));
+      var zoomLevel = Math.min(zoomWidth, zoomHeight);
+      var margin = -2 * zoomLevel;
+
+      const front = document.getElementById('front')!;
+      const overview = document.getElementById('overview')!;
+      const detail = document.getElementById('detail')!;
+      const coverletter = document.getElementById('coverletter')!;
+
+      // stop zooming when book fits page
+      if (zoomLevel >= 1) return;
+
+      front.style.transform = 'scale(' + zoomLevel + ')';
+      front.style.margin = margin + 'cm auto';
+      overview.style.transform = 'scale(' + zoomLevel + ')';
+      overview.style.margin = margin + 'cm auto';
+      detail.style.transform = 'scale(' + zoomLevel + ')';
+      detail.style.margin = margin + 'cm auto';
+      coverletter.style.transform = 'scale(' + zoomLevel + ')';
+      coverletter.style.margin = margin + 'cm auto';
+    }
+
+    adjustZoom();
+    window.addEventListener('resize', adjustZoom);
+  },
 });
 </script>
 
@@ -85,10 +123,42 @@ export default Vue.extend({
 @media screen and (min-width: 1024px) {
   .main {
     @apply flex h-full w-full;
+    background-color: #fafafa;
   }
-  .settings {
-    width: 600px !important;
-    overflow-y: auto;
+
+  #settings {
+    width: 40% !important;
   }
+}
+
+.canvas {
+  width: 100%;
+  height: 100%;
+  background: #fafafa !important;
+  overflow: scroll;
+  align-items: center;
+}
+
+.page {
+  background: #ddd;
+  transform-origin: top center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cv {
+  margin: auto;
+  @apply flex text-gray-800 shadow-lg text-sm font-normal;
+  width: 21cm;
+  height: 29.69cm;
+  min-width: 21cm;
+  min-height: 29.69cm;
+  max-width: 21cm;
+  max-height: 29.69cm;
 }
 </style>

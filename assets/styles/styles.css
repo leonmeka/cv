@@ -1,23 +1,30 @@
 @media print {
+  #nav {
+    display: none;
+    box-shadow: none;
+    z-index: 0;
+  }
+
   #settings {
     display: none;
     box-shadow: none;
     z-index: 0;
     max-width: 10px;
   }
+
   #cv {
-    display: block;
     width: 100%;
-    margin: 0;
-    padding: 0;
+    margin: 0 !important;
+    padding: 0 !important;
   }
 
   #cv .cv {
-    margin: 0;
+    margin: 0 !important;
     border: none;
-    padding: 0;
-    transform: none;
+    padding: 0 !important;
+    transform: none !important;
     box-shadow: none;
+    transform: scale(1) !important;
   }
 
   #cv #credit {

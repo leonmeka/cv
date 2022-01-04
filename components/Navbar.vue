@@ -3,7 +3,7 @@
     <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
       <div class="relative flex items-center justify-between h-16">
         <div
-          class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start"
+          class="flex-1 flex items-center justify-start sm:items-stretch sm:justify-start"
         >
           <div class="flex-shrink-0 flex items-center">
             <img
@@ -21,12 +21,10 @@
           </div>
         </div>
 
-        <div
-          class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0"
-        >
+        <div class="flex-shrink-0 flex items-center">
           <a
-            class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium"
-            >Public Beta (v1.0)</a
+            class="flex-shrink-0 flex bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium"
+            >Public Beta (v1.2)</a
           >
         </div>
       </div>

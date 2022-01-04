@@ -1,9 +1,16 @@
 <template>
   <div class="bg-gray-100 bg-opacity-100 shadow-lg font-bold z-10">
-    <h1 class="text-2xl pt-8 px-6 pb-6 tracking-wide">Live Editor</h1>
+    <div>
+      <h1 class="text-2xl pt-8 px-6 pb-6 tracking-wide">Live Editor</h1>
 
-    <hr />
-    <form class="form mb-10" autocomplete="on">
+      <hr />
+    </div>
+
+    <form
+      class="form mb-10"
+      autocomplete="on"
+      style="overflow-x: hidden; overflow-y: scroll; margin: 0;"
+    >
       <fieldset class="form__section px-6 py-3"></fieldset>
       <!-- LANGUAGE-->
       <fieldset class="form__section px-6 py-3">

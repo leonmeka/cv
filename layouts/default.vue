@@ -3,10 +3,18 @@
     <nuxt />
   </main>
 </template>
-<style lang="postcss" scoped>
+<style lang="postcss">
+.main-wrapper {
+  background-color: rgba(238, 242, 245, 1);
+}
+
 @media screen and (min-width: 1024px) {
   .main-wrapper {
-    @apply h-screen overflow-hidden;
+    @apply w-screen h-screen overflow-hidden;
+  }
+
+  html {
+    @apply w-screen h-screen overflow-hidden;
   }
 }
 </style>

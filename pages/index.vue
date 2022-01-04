@@ -1,8 +1,8 @@
 <template>
-  <div style="display: contents;">
+  <div class="holder">
     <navbar></navbar>
     <div class="main">
-      <cv-settings id="settings" style="overflow: scroll;"></cv-settings>
+      <cv-settings id="settings"></cv-settings>
       <div id="cv" class="canvas">
         <div class="book">
           <cv-preview-front id="front"></cv-preview-front>
@@ -86,7 +86,7 @@ export default Vue.extend({
       // 21cm width + 1cm of margins each sides
       // 29.7cm height + 1cm of margins each sides
       var zoomWidth = documentWidth / 23;
-      var zoomHeight = documentHeight / (31.7 * (1.25 * 37.795276));
+      var zoomHeight = documentHeight / (31.7 * (1.05 * 37.795276));
       var zoomLevel = Math.min(zoomWidth, zoomHeight);
       var margin = -2 * zoomLevel;
 
@@ -120,27 +120,81 @@ export default Vue.extend({
   src: url(~assets/signature.ttf) format('truetype');
 }
 
+.holder {
+  padding: 20px;
+}
+
+.canvas {
+  display: none;
+}
+
+.main {
+  background-color: rgba(238, 242, 245, 1) !important;
+}
+
+#settings {
+  border-radius: 0 0 10px 10px;
+  -webkit-box-shadow: 0px 0px 30px 2px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 0px 30px 2px rgba(0, 0, 0, 0.15);
+}
+
+#nav {
+  width: 100%;
+  border-radius: 10px 10px 0 0;
+  -webkit-box-shadow: 0px 0px 20px 2px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 0px 20px 2px rgba(0, 0, 0, 0.15);
+}
+
 @media screen and (min-width: 1024px) {
+  body,
+  html {
+    overflow: hidden !important;
+  }
+
+  .holder {
+    display: flex;
+    overflow: hidden;
+    padding: 20px 0 0 0;
+  }
+
   .main {
-    @apply flex h-full w-full;
-    background-color: #fafafa;
+    @apply flex w-full;
+    background-color: rgba(238, 242, 245, 1) !important;
+    position: absolute;
+    top: 104px;
+    bottom: 0px;
+    padding: 0px 20px 0 20px;
   }
 
   #settings {
-    width: 40% !important;
+    width: 45% !important;
+    display: grid;
+    border-radius: 10px 10px 0 0;
+    -webkit-box-shadow: 0px 0px 30px 2px rgba(0, 0, 0, 0.15);
+    box-shadow: 0px 0px 30px 2px rgba(0, 0, 0, 0.15);
+  }
+
+  #nav {
+    border-radius: 10px;
+    -webkit-box-shadow: 0px 0px 20px 2px rgba(0, 0, 0, 0.15);
+    box-shadow: 0px 0px 20px 2px rgba(0, 0, 0, 0.15);
+    margin: 0px 20px 20px 20px;
+  }
+
+  .canvas {
+    display: block;
   }
 }
 
 .canvas {
   width: 100%;
   height: 100%;
-  background: #fafafa !important;
   overflow: scroll;
   align-items: center;
 }
 
 .page {
-  background: #ddd;
+  background-color: rgba(238, 242, 245, 1);
   transform-origin: top center;
   display: flex;
   flex-direction: column;

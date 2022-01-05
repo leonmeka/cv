@@ -165,18 +165,19 @@ export default Vue.extend({
   }
 
   #settings {
-    width: 45% !important;
+    width: 30%;
     display: grid;
     border-radius: 10px 10px 0 0;
-    -webkit-box-shadow: 0px 0px 30px 2px rgba(0, 0, 0, 0.15);
-    box-shadow: 0px 0px 30px 2px rgba(0, 0, 0, 0.15);
+    -webkit-box-shadow: 0px 0px 20px 2px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 0px 20px 2px rgba(0, 0, 0, 0.1);
   }
 
   #nav {
     border-radius: 10px;
-    -webkit-box-shadow: 0px 0px 20px 2px rgba(0, 0, 0, 0.15);
-    box-shadow: 0px 0px 20px 2px rgba(0, 0, 0, 0.15);
+    -webkit-box-shadow: 0px 0px 20px 2px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 0px 20px 2px rgba(0, 0, 0, 0.1);
     margin: 0px 20px 20px 20px;
+    brackground-color: rgba(51, 51, 51, 1);
   }
 
   .canvas {
@@ -185,7 +186,7 @@ export default Vue.extend({
 }
 
 .canvas {
-  width: 100%;
+  width: 70%;
   height: 100%;
   overflow: scroll;
   align-items: center;
@@ -204,6 +205,7 @@ export default Vue.extend({
 }
 
 .cv {
+  border-radius: 10px;
   margin: auto;
   @apply flex text-gray-800 shadow-lg text-sm font-normal;
   width: 21cm;

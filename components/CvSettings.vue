@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-gray-100 bg-opacity-100 shadow-lg font-bold z-10">
+  <div class="bg-white shadow-lg font-bold z-10">
     <div>
       <h1 class="text-2xl pt-8 px-6 pb-6 tracking-wide">Live Editor</h1>
 

@@ -24,7 +24,7 @@
         <div class="flex-shrink-0 flex items-center">
           <a
             class="flex-shrink-0 flex bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium"
-            >Public Beta (v1.2)</a
+            >Public Beta (v1.3)</a
           >
         </div>
       </div>

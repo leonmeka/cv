@@ -95,7 +95,7 @@ export default Vue.extend({
 
 .expansion-panel {
   overflow: hidden;
-  @apply bg-gray-100 bg-opacity-100 relative px-6 py-3;
+  @apply bg-white relative px-6 py-3;
 
   & & {
     @apply p-1;
@@ -105,7 +105,7 @@ export default Vue.extend({
     @apply flex items-center justify-between w-full flex-row-reverse  mb-10;
   }
   &__title {
-    @apply flex items-center justify-between w-full bg-gray-100 bg-opacity-100 z-10 capitalize;
+    @apply flex items-center justify-between w-full bg-white z-10 capitalize;
     &:hover {
       cursor: pointer;
     }

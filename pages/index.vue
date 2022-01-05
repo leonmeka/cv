@@ -11,7 +11,7 @@
       </div>
 
       <div class="toast">
-        <div class="bg-white shadow-lg toast-text">
+        <div class="bg-white shadow-lg toast-text text-sm">
           {{ $t('progress-saved') }}
         </div>
       </div>
@@ -125,6 +125,7 @@ export default Vue.extend({
 }
 
 .toast {
+  display: none;
   position: absolute;
   right: 0;
   left: 0;
@@ -133,7 +134,6 @@ export default Vue.extend({
 }
 
 .toast-text {
-  font-size: 0.75em;
   display: inline-block;
   border-radius: 10px;
   float: right;
@@ -169,6 +169,10 @@ export default Vue.extend({
   body,
   html {
     overflow: hidden !important;
+  }
+
+  .toast {
+    display: block;
   }
 
   .holder {

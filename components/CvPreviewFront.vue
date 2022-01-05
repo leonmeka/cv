@@ -75,6 +75,17 @@
               >{{ `linkedin.com/in/${formSettings.linkedin}` }}</a
             >
           </div>
+          <div v-if="formSettings.xing" class="cv__icon-wrapper">
+            <svg class="cv__icon">
+              <use href="@/assets/sprite.svg#xing-color"></use>
+            </svg>
+            <a
+              target="_blank"
+              rel="noopener"
+              :href="`https://www.xing.com/profile/${formSettings.xing}`"
+              >{{ `https://www.xing.com/profile/${formSettings.xing}` }}</a
+            >
+          </div>
           <div v-if="formSettings.twitter" class="cv__icon-wrapper">
             <svg class="cv__icon">
               <use href="@/assets/sprite.svg#twitter-color"></use>
@@ -84,6 +95,17 @@
               rel="noopener"
               :href="`https://twitter.com/${formSettings.twitter}`"
               >{{ `twitter.com/${formSettings.twitter}` }}</a
+            >
+          </div>
+          <div v-if="formSettings.instagram" class="cv__icon-wrapper">
+            <svg class="cv__icon">
+              <use href="@/assets/sprite.svg#instagram-color"></use>
+            </svg>
+            <a
+              target="_blank"
+              rel="noopener"
+              :href="`https://instagram.com/${formSettings.instagram}`"
+              >{{ `https://instagram.com/${formSettings.instagram}` }}</a
             >
           </div>
           <div v-if="formSettings.github" class="cv__icon-wrapper">

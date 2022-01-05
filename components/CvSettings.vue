@@ -215,6 +215,20 @@
               <div class="form__group col-span-full">
                 <label class="form__label flex" for="twitter">
                   <svg class="form__icon rounded mr-1">
+                    <use href="@/assets/sprite.svg#xing"></use>
+                  </svg>
+                  Xing
+                </label>
+                <input
+                  id="xing"
+                  v-model="formSettings.xing"
+                  class="form__control"
+                  type="text"
+                />
+              </div>
+              <div class="form__group col-span-full">
+                <label class="form__label flex" for="twitter">
+                  <svg class="form__icon rounded mr-1">
                     <use href="@/assets/sprite.svg#twitter"></use>
                   </svg>
                   Twitter
@@ -222,6 +236,20 @@
                 <input
                   id="twitter"
                   v-model="formSettings.twitter"
+                  class="form__control"
+                  type="text"
+                />
+              </div>
+              <div class="form__group col-span-full">
+                <label class="form__label flex" for="twitter">
+                  <svg class="form__icon rounded mr-1">
+                    <use href="@/assets/sprite.svg#instagram"></use>
+                  </svg>
+                  Instagram
+                </label>
+                <input
+                  id="instagram"
+                  v-model="formSettings.instagram"
                   class="form__control"
                   type="text"
                 />

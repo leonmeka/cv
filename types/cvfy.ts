@@ -15,8 +15,10 @@ export interface Cv {
   additionalSkills: string[];
   languages: { lang: string; level: string }[];
   linkedin: string;
+  xing: string;
   twitter: string;
   github: string;
+  instagram: string;
   website: string;
   education: CvEvent[];
   work: CvEvent[];

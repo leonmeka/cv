@@ -9,6 +9,12 @@
         <cv-preview-details id="detail"></cv-preview-details>
         <cv-preview-cover-letter id="coverletter"></cv-preview-cover-letter>
       </div>
+
+      <div class="toast">
+        <div class="bg-white shadow-lg toast-text">
+          {{ $t('progress-saved') }}
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -32,7 +38,7 @@ export default Vue.extend({
     CvPreviewCoverLetter,
     Navbar,
   },
-
+  setup() {},
   head() {
     return {
       htmlAttrs: {
@@ -116,6 +122,22 @@ export default Vue.extend({
 @font-face {
   font-family: 'signature';
   src: url(~assets/signature.ttf) format('truetype');
+}
+
+.toast {
+  position: absolute;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  margin: 20px 20px;
+}
+
+.toast-text {
+  font-size: 0.75em;
+  display: inline-block;
+  border-radius: 10px;
+  float: right;
+  padding: 7px 15px;
 }
 
 .holder {

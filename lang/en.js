@@ -59,4 +59,5 @@ export default {
   notice: 'Notice:',
   'chrome-notice':
     'For ensuring optimal results, we recommend using Google Chrome.',
+  'progress-saved': 'Progress saved automatically.',
 };

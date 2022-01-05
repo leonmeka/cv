@@ -214,7 +214,7 @@ export default Vue.extend({
 .canvas {
   width: 70%;
   height: 100%;
-  overflow: scroll;
+  overflow-y: scroll;
   align-items: center;
 }
 

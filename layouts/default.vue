@@ -8,6 +8,11 @@
   background-color: rgba(238, 242, 245, 1);
 }
 
+textarea,
+input {
+  border: 1px solid rgba(0, 0, 0, 0.2) !important;
+}
+
 @media screen and (min-width: 1024px) {
   .main-wrapper {
     @apply w-screen h-screen overflow-hidden;

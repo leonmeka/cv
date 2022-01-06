@@ -21,7 +21,7 @@ export default {
       {
         hid: 'twitter:card',
         name: 'twitter:card',
-        content: '/add-banner.png',
+        content: 'summary_large_image',
       },
       {
         hid: 'twitter:url',
@@ -36,7 +36,7 @@ export default {
       {
         hid: 'facebook:card',
         name: 'facebook:card',
-        content: '/add-banner.png',
+        content: '/ad-banner.png',
       },
       {
         hid: 'facebook:url',

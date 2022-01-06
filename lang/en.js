@@ -61,7 +61,7 @@ export default {
     'For ensuring optimal results, we recommend using Google Chrome.',
   'progress-saved': 'Progress is saved automatically.',
   'gumroad-email': 'E-Mail',
-  'gumroad-license-key': 'License Key',
+  'gumroad-licenseKey': 'License Key',
   'gumroad-email-input': 'Your E-Mail adress...',
   'gumroad-license-key-input': 'Your individual License Key...',
 };

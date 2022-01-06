@@ -21,7 +21,7 @@ export default {
       {
         hid: 'twitter:card',
         name: 'twitter:card',
-        content: '~/assets/images/add-banner.png' || '',
+        content: '/add-banner.png',
       },
       {
         hid: 'twitter:url',
@@ -31,22 +31,22 @@ export default {
       {
         hid: 'twitter:image',
         name: 'twitter:image',
-        content: 'icon.png',
+        content: '/icon.png',
       },
       {
         hid: 'facebook:card',
-        name: 'twitter:card',
-        content: '~/assets/images/add-banner.png' || '',
+        name: 'facebook:card',
+        content: '/add-banner.png',
       },
       {
         hid: 'facebook:url',
-        name: 'twitter:url',
+        name: 'facebook:url',
         content: 'https://cvflow.netlify.app/',
       },
       {
         hid: 'facebook:image',
-        name: 'twitter:image',
-        content: 'icon.png',
+        name: 'facebook:image',
+        content: '/icon.png',
       },
     ],
     htmlAttrs: {

@@ -28,6 +28,11 @@ export default {
         name: 'twitter:url',
         content: 'https://cvflow.netlify.app/',
       },
+      {
+        hid: 'twitter:image',
+        name: 'twitter:image',
+        content: '/icon.png',
+      },
     ],
     htmlAttrs: {
       lang: 'en',

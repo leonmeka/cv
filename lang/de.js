@@ -63,4 +63,6 @@ export default {
   'progress-saved': 'Fortschritt automatisch gespeichert.',
   'gumroad-email': 'E-Mail',
   'gumroad-license-key': 'Lizensschlüssel',
+  'gumroad-email-input': 'Deine E-Mail Adresse...',
+  'gumroad-license-key-input': 'Dein persönlicher Lizensschlüssel...',
 };

@@ -495,16 +495,18 @@
           class="form__control"
           type="text"
           v-model="gumroad_email"
-          :placeholder="$t('gumroad-email')"
+          :placeholder="'Please enter your ' + $t('gumroad-email') + '...'"
         />
         <label class="form__label" style="margin-top: 10px;"
-          >🔐 {{ $t('gumroad-licenseKey ') }}</label
+          >🔐 {{ $t('gumroad-licenseKey') }}</label
         >
         <input
           class="form__control"
           type="text"
           v-model="gumroad_licenseKey"
-          :placeholder="$t('gumroad-license-key')"
+          :placeholder="
+            'Please enter your ' + $t('gumroad-license-key') + '...'
+          "
         />
         <button
           type="button"

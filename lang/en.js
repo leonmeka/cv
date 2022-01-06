@@ -60,4 +60,6 @@ export default {
   'chrome-notice':
     'For ensuring optimal results, we recommend using Google Chrome.',
   'progress-saved': 'Progress is saved automatically.',
+  'gumroad-email': 'E-Mail',
+  'gumroad-license-key': 'License Key',
 };

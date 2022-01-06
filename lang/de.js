@@ -61,4 +61,6 @@ export default {
   'chrome-notice':
     'Um optimale Ergebnisse zu erzielen, empfehlen wir die Verwendung von Google Chrome.',
   'progress-saved': 'Fortschritt automatisch gespeichert.',
+  'gumroad-email': 'E-Mail',
+  'gumroad-license-key': 'Lizensschlüssel',
 };

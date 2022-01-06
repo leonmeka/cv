@@ -14,7 +14,7 @@
             <div class="flex-shrink-0 flex items-center">
               <img
                 class="hidden lg:block h-12 w-auto"
-                src="../static/logo.png"
+                src="../static/logo.svg"
                 alt="cvflow"
               />
             </div>

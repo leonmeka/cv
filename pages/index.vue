@@ -57,9 +57,9 @@ export default Vue.extend({
           content: this.$t('description') as string,
         },
         {
-          hid: 'og:image',
+          hid: 'og:imgage',
           property: 'og:image',
-          content: '../static/ad-banner.png',
+          content: '~/assets/images/icon.png' || '',
         },
         {
           hid: 'author',

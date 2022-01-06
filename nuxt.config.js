@@ -21,7 +21,7 @@ export default {
       {
         hid: 'twitter:card',
         name: 'twitter:card',
-        content: 'add-banner.png',
+        content: '~/assets/images/add-banner.png' || '',
       },
       {
         hid: 'twitter:url',

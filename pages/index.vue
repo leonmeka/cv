@@ -59,7 +59,7 @@ export default Vue.extend({
         {
           hid: 'og:imgage',
           property: 'og:image',
-          content: '~/assets/images/logo.svg' || '',
+          content: '~/assets/images/logo.png' || '',
         },
         {
           hid: 'author',

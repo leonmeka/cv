@@ -33,6 +33,21 @@ export default {
         name: 'twitter:image',
         content: 'icon.png',
       },
+      {
+        hid: 'facebook:card',
+        name: 'twitter:card',
+        content: '~/assets/images/add-banner.png' || '',
+      },
+      {
+        hid: 'facebook:url',
+        name: 'twitter:url',
+        content: 'https://cvflow.netlify.app/',
+      },
+      {
+        hid: 'facebook:image',
+        name: 'twitter:image',
+        content: 'icon.png',
+      },
     ],
     htmlAttrs: {
       lang: 'en',

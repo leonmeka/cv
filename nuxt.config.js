@@ -22,6 +22,7 @@ export default {
     htmlAttrs: {
       lang: 'en',
     },
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
 
   // Global CSS (https://go.nuxtjs.dev/config-css)

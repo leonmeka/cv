@@ -54,14 +54,14 @@ export default {
   hobbies: 'Hobbies / Interests',
   'serial-key': 'Activiation Key',
   'secret-password': 'Enter secret passphrase...',
-  'missing-key': "You don't have an activation key yet?",
+  'missing-key': "You don't have an license key yet?",
   'purchase-key': 'Purchase Now',
   notice: 'Notice:',
   'chrome-notice':
     'For ensuring optimal results, we recommend using Google Chrome.',
   'progress-saved': 'Progress is saved automatically.',
   'gumroad-email': 'E-Mail',
-  'gumroad-licenseKey': 'License Key',
+  'gumroad-licenseKey': 'License key',
   'gumroad-email-input': 'Your E-Mail adress...',
-  'gumroad-license-key-input': 'Your individual License Key...',
+  'gumroad-license-key-input': 'Your license Key...',
 };

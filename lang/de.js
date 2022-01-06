@@ -53,9 +53,9 @@ export default {
   'cover-letter-introduction': 'Sehr geehrte Damen und Herren,',
   'cover-letter-greetings': 'Mit freundlichen Grüßen,',
   hobbies: 'Hobbies / Interessen',
-  'serial-key': 'Aktivierungsschlüssel',
+  'serial-key': 'Lizensschlüssel',
   'secret-password': 'Geheimes Passwort eingeben...',
-  'missing-key': 'Du besitzt noch keinen Aktivierungsschlüssel?',
+  'missing-key': 'Du besitzt noch keinen Lizensschlüssel?',
   'purchase-key': 'Jetzt kaufen',
   notice: 'Hinweis:',
   'chrome-notice':

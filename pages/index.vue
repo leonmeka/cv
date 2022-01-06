@@ -57,7 +57,7 @@ export default Vue.extend({
           content: this.$t('description') as string,
         },
         {
-          hid: 'og:imgage',
+          hid: 'og:image',
           property: 'og:image',
           content: '/ad-banner.png',
         },
@@ -80,6 +80,11 @@ export default Vue.extend({
           hid: 'og:description',
           property: 'og:description',
           content: this.$t('description') as string,
+        },
+        {
+          hid: 'twitter:card',
+          property: 'twitter:card',
+          content: 'summary_large_image',
         },
       ],
     };

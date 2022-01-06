@@ -28,26 +28,6 @@ export default {
         name: 'twitter:url',
         content: 'https://cvflow.netlify.app/',
       },
-      {
-        hid: 'twitter:image',
-        name: 'twitter:image',
-        content: '/icon.png',
-      },
-      {
-        hid: 'facebook:card',
-        name: 'facebook:card',
-        content: '/ad-banner.png',
-      },
-      {
-        hid: 'facebook:url',
-        name: 'facebook:url',
-        content: 'https://cvflow.netlify.app/',
-      },
-      {
-        hid: 'facebook:image',
-        name: 'facebook:image',
-        content: '/icon.png',
-      },
     ],
     htmlAttrs: {
       lang: 'en',

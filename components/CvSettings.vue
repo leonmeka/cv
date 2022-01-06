@@ -490,7 +490,7 @@
       <hr />
 
       <div class="form__section flex flex-col p-6 gap-3">
-        <label class="form__label">🔐 {{ $t('gumroad-email') }}</label>
+        <label class="form__label">📬 {{ $t('gumroad-email') }}</label>
         <input
           class="form__control"
           type="text"
@@ -498,7 +498,7 @@
           :placeholder="$t('gumroad-email-input')"
         />
         <label class="form__label" style="margin-top: 10px;"
-          >🔐 {{ $t('gumroad-licenseKey') }}</label
+          >🔑 {{ $t('gumroad-licenseKey') }}</label
         >
         <input
           class="form__control"

@@ -490,17 +490,26 @@
       <hr />
 
       <div class="form__section flex flex-col p-6 gap-3">
-        <label class="form__label">🔐 {{ $t('serial-key') }}</label>
+        <label class="form__label">🔐 {{ $t('gumroad-email') }}</label>
         <input
           class="form__control"
           type="text"
-          v-model="password"
-          :placeholder="$t('secret-password')"
+          v-model="gumroad_email"
+          :placeholder="$t('gumroad-email')"
+        />
+        <label class="form__label" style="margin-top: 10px;"
+          >🔐 {{ $t('gumroad-licenseKey ') }}</label
+        >
+        <input
+          class="form__control"
+          type="text"
+          v-model="gumroad_licenseKey"
+          :placeholder="$t('gumroad-license-key')"
         />
         <button
           type="button"
           class="form__btn form__btn--confirm form__btn flex flex-col justify-center"
-          @click="authenticate(password)"
+          @click="authenticate(gumroad_email, gumroad_licenseKey)"
         >
           <span>{{ $t('download-cv-pdf') }}</span>
         </button>
@@ -566,7 +575,8 @@ export default Vue.extend({
 
     const { formSettings, uploadCV, resetForm, setUpCvSettings } = useCvState();
     const context = useContext();
-    let password = '';
+    let gumroad_email = '';
+    let gumroad_licenseKey = '';
 
     onMounted(setUpCvSettings);
 
@@ -597,19 +607,42 @@ export default Vue.extend({
       );
     });
 
-    function authenticate(password): void {
-      if (md5(password) === '691c080bc820f27fe1ea82a33228a9e8') {
-        const oldTitle = document.title;
-        document.title = `CV_${formSettings.value.name}_${formSettings.value.lastName}_${context.app.i18n.locale}`;
-        try {
-          document.execCommand('print', false);
-        } catch (e) {
-          window.print();
+    async function authenticate(email, licenseKey): Promise<void> {
+      var url =
+        'https://api.gumroad.com/v2/licenses/verify?product_permalink=cvflow-serial-key&license_key=' +
+        licenseKey +
+        '';
+
+      var xhr = new XMLHttpRequest();
+      xhr.open('POST', url);
+
+      xhr.setRequestHeader('Accept', 'application/json');
+      xhr.setRequestHeader('Content-Type', 'application/json');
+
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4) {
+          if (JSON.parse(xhr.responseText)['success']) {
+            if (JSON.parse(xhr.responseText)['purchase']['email'] === email) {
+              const oldTitle = document.title;
+              document.title = `CV_${formSettings.value.name}_${formSettings.value.lastName}_${context.app.i18n.locale}`;
+              try {
+                document.execCommand('print', false);
+              } catch (e) {
+                window.print();
+              }
+              document.title = oldTitle;
+            } else {
+              alert('Email incorrect / E-Mail ungültig!');
+            }
+          } else {
+            alert(
+              'License Key or Email incorrect / Lizensschlüssel oder E-Mail ungültig!'
+            );
+          }
         }
-        document.title = oldTitle;
-      } else {
-        alert('Activation Key incorrect / Aktivierungsschlüssel ungültig!');
-      }
+      };
+
+      xhr.send();
     }
 
     function changeColor(color: string, darker: string): void {
@@ -668,7 +701,8 @@ export default Vue.extend({
       authenticate,
       uploadCV,
       resetForm,
-      password,
+      gumroad_licenseKey,
+      gumroad_email,
     };
   },
 });

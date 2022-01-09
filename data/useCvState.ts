@@ -124,9 +124,16 @@ export function useCvState() {
   }
 
   function resetForm(): void {
-    state.formSettings = cvSettingTemplate;
-    localStorage.removeItem('cvSettings-de');
-    localStorage.removeItem('cvSettings-en');
+    if (
+      confirm(
+        'Do you really want to delete all saved CV settings? / Willst du wirklich alle gespeicherten Lebenslauf-Einstellungen zurücksetzen?'
+      )
+    ) {
+      state.formSettings = cvSettingTemplate;
+      localStorage.removeItem('cvSettings-de');
+      localStorage.removeItem('cvSettings-en');
+      location.reload();
+    }
   }
 
   function changeDisplaySection(e: {

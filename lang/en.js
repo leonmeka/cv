@@ -43,7 +43,7 @@ export default {
   to: 'To',
   summary: 'Summary',
   work: 'work',
-  'clear-settings': 'Clear Settings',
+  'clear-settings': 'Clear All Settings',
   description: 'Create, visualize and save your resume as a PDF in minutes!',
   'title-tag': 'cvflow: Live Editor',
   projects: 'projects',

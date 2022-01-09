@@ -43,7 +43,7 @@ export default {
   to: 'Bis',
   summary: 'Zusammenfassung',
   work: 'Arbeit',
-  'clear-settings': 'Einstellungen zurücksetzen',
+  'clear-settings': 'Alle Einstellungen zurücksetzen',
   description:
     'Erstelle, visualisiere und speichere deinen Lebenslauf als PDF in wenigen Minuten!',
   'title-tag': 'cvflow: Live Editor',

@@ -64,7 +64,7 @@ export default {
   'gumroad-email': 'E-Mail',
   'gumroad-licenseKey': 'Lizensschlüssel',
   'gumroad-email-input': 'Deine E-Mail Adresse...',
-  'gumroad-license-key-input': 'Dein persönlicher Lizensschlüssel...',
+  'gumroad-license-key-input': 'Dein Lizensschlüssel...',
   'coming-soon': 'bald verfügbar',
   download: 'Herunterladen',
 };

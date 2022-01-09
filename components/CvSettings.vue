@@ -461,35 +461,8 @@
 
       <hr />
 
-      <!-- CTA -->
       <div class="form__section flex flex-col p-6 gap-3">
-        <label
-          tabindex="0"
-          class="form__btn form__btn--ghost form__btn flex flex-col justify-center"
-        >
-          {{ $t('upload-cv') }} ({{ $i18n.locale }})
-          <input type="file" accept=".json" class="hidden" @change="uploadCV" />
-        </label>
-        <a
-          :href="formSettingsHref"
-          rel="noopener"
-          :download="`CV_${formSettings.name}_${formSettings.lastName}_${$i18n.locale}.json`"
-          class="form__btn form__btn--ghost form__btn flex flex-col justify-center"
-          >{{ $t('download-cv-settings') }} ({{ $i18n.locale }})</a
-        >
-
-        <button
-          type="button"
-          class="form__btn form__btn--delete flex flex-col justify-center"
-          @click="resetForm"
-        >
-          <span>{{ $t('clear-settings') }}</span>
-        </button>
-      </div>
-
-      <hr />
-
-      <div class="form__section flex flex-col p-6 gap-3">
+        <legend class="form__legend mb-5">{{ $t('download') }}</legend>
         <label class="form__label">📬 {{ $t('gumroad-email') }}</label>
         <input
           class="form__control"

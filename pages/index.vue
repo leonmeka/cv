@@ -12,7 +12,89 @@
 
       <div class="toast">
         <div class="bg-white shadow-lg toast-text text-sm">
-          {{ $t('progress-saved') }}
+          <div class="zoom-container bg-gray-800">
+            <button
+              class="flex-shrink-0 flex bg-gray-500 text-black px-4 py-2 rounded-md"
+              type="button"
+              @click="
+                updateZoomValue(-0.04);
+                adjustZoom();
+              "
+            >
+              <b>+</b>
+            </button>
+            <button
+              class="flex-shrink-0 flex bg-gray-500 text-black px-4 py-2 rounded-md"
+              type="button"
+              @click="
+                updateZoomValue(0.04);
+                adjustZoom();
+              "
+            >
+              <b>–</b>
+            </button>
+          </div>
+
+          <div>
+            <button
+              class="flex-shrink-0 flex bg-gray-800 text-white px-3 py-2 rounded-md text-sm font-medium"
+              type="button"
+              data-dropdown-toggle="dropdown"
+            >
+              {{ $t('cv-settings') }}
+              <svg
+                class="w-4 h-4 ml-2"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                ></path>
+              </svg>
+            </button>
+
+            <div
+              class="hidden bg-white text-base z-20 list-none divide-y divide-gray-100 rounded shadow my-4"
+              id="dropdown"
+            >
+              <ul class="py-1" aria-labelledby="dropdown">
+                <li>
+                  <label
+                    href="#"
+                    class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+                    >{{ $t('upload-cv') }} ({{ $i18n.locale }})
+                    <input
+                      type="file"
+                      accept=".json"
+                      class="hidden"
+                      @change="uploadCV"
+                    />
+                  </label>
+                </li>
+                <li>
+                  <a
+                    :href="formSettingsHref"
+                    rel="noopener"
+                    :download="`CV_${formSettings.name}_${formSettings.lastName}_${$i18n.locale}.json`"
+                    class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+                    >{{ $t('download-cv-settings') }} ({{ $i18n.locale }})</a
+                  >
+                </li>
+                <li>
+                  <a
+                    @click="resetForm"
+                    class="text-sm hover:bg-red-100 text-red-700 block px-4 py-2"
+                    >{{ $t('clear-settings') }}</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -27,6 +109,10 @@ import CvPreview from '@/components/CvPreview.vue';
 import CvPreviewDetails from '@/components/CvPreviewDetails.vue';
 import CvPreviewCoverLetter from '@/components/CvPreviewCoverLetter.vue';
 import Navbar from '@/components/Navbar.vue';
+import { useCvState } from '~/data/useCvState';
+import { computed } from '@nuxtjs/composition-api';
+
+let zoomValue = 1.05;
 
 export default Vue.extend({
   name: 'Index',
@@ -38,7 +124,61 @@ export default Vue.extend({
     CvPreviewCoverLetter,
     Navbar,
   },
-  setup() {},
+  setup() {
+    const { formSettings, uploadCV, resetForm, setUpCvSettings } = useCvState();
+
+    const formSettingsHref = computed(function getFormSettingsHref() {
+      return `data:text/json;charset=utf-8,${encodeURIComponent(
+        JSON.stringify({ formSettings: formSettings.value })
+      )}`;
+    });
+
+    function updateZoomValue(value) {
+      zoomValue += value;
+    }
+
+    function adjustZoom() {
+      const canvas = document.getElementById('cv')!;
+
+      var documentWidth = canvas.offsetWidth;
+      var documentHeight = canvas.offsetHeight;
+
+      // 1cm = 37.795276px;
+      // 21cm width + 1cm of margins each sides
+      // 29.7cm height + 1cm of margins each sides
+      var zoomWidth = documentWidth / 23;
+      var zoomHeight = documentHeight / (31.7 * (zoomValue * 37.795276));
+      var zoomLevel = Math.min(zoomWidth, zoomHeight);
+      var margin = -2 * zoomLevel;
+
+      const front = document.getElementById('front')!;
+      const overview = document.getElementById('overview')!;
+      const detail = document.getElementById('detail')!;
+      const coverletter = document.getElementById('coverletter')!;
+
+      // stop zooming when book fits page
+      if (zoomLevel >= 1) return;
+
+      front.style.transform = 'scale(' + zoomLevel + ')';
+      front.style.margin = margin + 'cm auto';
+      overview.style.transform = 'scale(' + zoomLevel + ')';
+      overview.style.margin = margin + 'cm auto';
+      detail.style.transform = 'scale(' + zoomLevel + ')';
+      detail.style.margin = margin + 'cm auto';
+      coverletter.style.transform = 'scale(' + zoomLevel + ')';
+      coverletter.style.margin = margin + 'cm auto';
+    }
+
+    return {
+      uploadCV,
+      formSettings,
+      formSettingsHref,
+      resetForm,
+      setUpCvSettings,
+      updateZoomValue,
+      adjustZoom,
+    };
+  },
   head() {
     return {
       htmlAttrs: {
@@ -100,7 +240,7 @@ export default Vue.extend({
       // 21cm width + 1cm of margins each sides
       // 29.7cm height + 1cm of margins each sides
       var zoomWidth = documentWidth / 23;
-      var zoomHeight = documentHeight / (31.7 * (1.05 * 37.795276));
+      var zoomHeight = documentHeight / (31.7 * (zoomValue * 37.795276));
       var zoomLevel = Math.min(zoomWidth, zoomHeight);
       var margin = -2 * zoomLevel;
 
@@ -144,10 +284,25 @@ export default Vue.extend({
 }
 
 .toast-text {
-  display: inline-block;
+  display: flex;
   border-radius: 10px;
   float: right;
   padding: 7px 15px;
+}
+
+.zoom-container {
+  display: flex;
+  border: solid 1px;
+  margin-right: 10px;
+  border-radius: 0.375rem;
+
+  button {
+    transform: scale(0.75);
+  }
+
+  svg {
+    margin: auto;
+  }
 }
 
 .holder {

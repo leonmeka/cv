@@ -1,5 +1,7 @@
 <template>
   <nav class="bg-gray-800" id="nav">
+    <script src="https://unpkg.com/@themesberg/flowbite@latest/dist/flowbite.bundle.js"></script>
+
     <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
       <div class="relative flex items-center justify-between h-16">
         <div
@@ -24,7 +26,7 @@
         <div class="flex-shrink-0 flex items-center">
           <a
             class="flex-shrink-0 flex bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium"
-            >Public Beta (v1.4)</a
+            >Public Beta (v1.5)</a
           >
         </div>
       </div>

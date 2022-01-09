@@ -11,7 +11,7 @@
       </div>
 
       <div class="toast">
-        <div class="bg-white shadow-lg toast-text text-sm">
+        <div class="bg-white toast-container shadow-lg toast-text text-sm">
           <div class="zoom-container bg-gray-800">
             <button
               class="flex-shrink-0 flex bg-gray-500 text-black px-4 py-2 rounded-md"
@@ -281,6 +281,10 @@ export default Vue.extend({
   left: 0;
   bottom: 0;
   margin: 20px 20px;
+}
+
+.toast-container {
+  padding: 10px 12px !important;
 }
 
 .toast-text {

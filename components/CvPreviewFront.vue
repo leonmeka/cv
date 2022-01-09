@@ -21,7 +21,7 @@
 
       <section class="cv__section cv__section--main">
         <h2 class="cv__name">
-          {{ formSettings.name }} <b>{{ formSettings.lastName }}</b>
+          {{ formSettings.name }} {{ formSettings.lastName }}
         </h2>
         <h3 class="cv__job-title">{{ formSettings.jobTitle }}</h3>
       </section>

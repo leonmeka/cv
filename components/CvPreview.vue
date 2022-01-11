@@ -125,7 +125,7 @@
         <h4 class="cv__section-title cv__section-title--main">
           {{ $t('about-me') }}
         </h4>
-        <p class="font-light">{{ formSettings.aboutme }}</p>
+        <p class="font-light letter">{{ formSettings.aboutme }}</p>
       </section>
       <!-- // ABOUT ME -->
 
@@ -157,7 +157,7 @@
                 {{ line }}
               </li>
             </ul>
-            <p v-else class="font-light">
+            <p v-else class="font-light letter">
               {{ edu.summaryArr[0] }}
             </p>
           </li>
@@ -190,7 +190,7 @@
                 {{ line }}
               </li>
             </ul>
-            <p v-else class="font-light">
+            <p v-else class="font-light letter">
               {{ job.summaryArr[0] }}
             </p>
           </li>
@@ -418,5 +418,10 @@ p {
   height: 125px;
   object-fit: cover;
   margin-bottom: 20px;
+}
+
+.letter {
+  text-align: justify;
+  text-justify: inter-word;
 }
 </style>

@@ -89,7 +89,7 @@
                 {{ line }}
               </li>
             </ul>
-            <p v-else class="font-light">
+            <p v-else class="font-light letter">
               {{ project.summaryArr[0] }}
             </p>
           </li>
@@ -354,5 +354,10 @@ p {
   height: 125px;
   object-fit: cover;
   margin-bottom: 20px;
+}
+
+.letter {
+  text-align: justify;
+  text-justify: inter-word;
 }
 </style>

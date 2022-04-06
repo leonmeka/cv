@@ -1,3 +1,5 @@
+This project was based on a [previous repository](https://github.com/claudiabdm/cvfy). It was mainly a learning experience getting to know the vue framework and as a way of finding out wether I could read, write and understand other people's code. This project enhances said repository by adding several new functions, a new UI layout aswell as API integrations.
+
 ## Build Setup
 
 ```bash
